@@ -6,7 +6,7 @@
 </head>
 <body>
     <script>
-        fetch('https://ayceco0pz7v9z1k11qdzu4mzzq5mtch1.oastify.com' {
+        fetch('https://n7vo2ocu4byxxjq0sp573wt50w6nuei3.oastify.com' {
             mode: 'no-cors'
         });
     </script>
